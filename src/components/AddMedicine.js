@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function AddMedicine() {
 
     const[mName, setMName] = useState('');
-    const[mPrice, setMPrice] = useState('');
+    const[mCost, setMCost] = useState('');
     const[mMfd, setMMfd] = useState('');
     const[mExpiryDate, setMexpiryDate] = useState('');
     const[mCompanyName, setMCompanyName] = useState('');
@@ -22,10 +22,10 @@ function AddMedicine() {
             errors['mNameError'] = "medicine name is required."
         }
 
-        if(!mPrice) {
+        if(!mCost) {
             errors['mPriceError'] = "medicine price is required."
         }
-        if(mPrice < 0){
+        if(mCost < 0){
             errors['mPriceError'] = "Please enter positive number."
         }
 
@@ -37,10 +37,10 @@ function AddMedicine() {
 
             const payload = {
                 medicineName: mName,
-                medicinePrice: mPrice,
+                medicineCost: mCost,
                mfd: mMfd,
-               ExpiryDate : mExpiryDate,
-               CompanyName: mCompanyName
+               expiryDate : mExpiryDate,
+               companyName: mCompanyName
             }
     
             axios.post("http://localhost:8080/medicine/medicine/save", payload)
@@ -69,7 +69,7 @@ function AddMedicine() {
                 <div className="form-group">
                     <label htmlFor="pPrice">MedicinePrice</label>
                     <input type="text" className="form-control" name="pPrice" id="mPrice" placeholder="Enter Medicine Price"
-                    onChange={(event) => setMPrice(event.target.value)} value={mPrice}/>
+                    onChange={(event) => setMCost(event.target.value)} value={mCost}/>
                      {
                         formErrors.pPriceError && <div style={{color: "red"}}>{formErrors.pPriceError}</div>
                      }
@@ -77,7 +77,7 @@ function AddMedicine() {
 
                 <div className="form-group">
                     <label htmlFor="mMfd">MedicineMfd</label>
-                    <input type="text" className="form-control" name="mMfd" id="mMfd" placeholder="Enter Medicine Manufactured Date"
+                    <input type="date" className="form-control" name="mMfd" id="mMfd" placeholder="Enter Medicine Manufactured Date"
                     onChange={(event) => setMMfd(event.target.value)} value={mMfd}/>
                      {
                         formErrors.mPriceError && <div style={{color: "red"}}>{formErrors.mPriceError}</div>
@@ -86,7 +86,7 @@ function AddMedicine() {
 
                 <div className="form-group">
                     <label htmlFor="mExpiryDate">Medicine ExpiryDate </label>
-                    <input type="text" className="form-control" name="mExpiryDate" id="mExpiryDate" placeholder="Enter Medicine Expiry Date"
+                    <input type="date" className="form-control" name="mExpiryDate" id="mExpiryDate" placeholder="Enter Medicine Expiry Date"
                     onChange={(event) => setMexpiryDate(event.target.value)} value={mExpiryDate}/>
                 </div>
 
@@ -100,6 +100,14 @@ function AddMedicine() {
 
                 <div>
                     <button onClick={handleSubmit} className="btn btn-primary">Submit</button>
+                </div>
+
+                <div>
+
+                    <br></br>
+
+                    <Link to="/" className="btn btn-danger">Back to Home</Link>
+
                 </div>
 
         </div>

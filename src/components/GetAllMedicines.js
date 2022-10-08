@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import cumin1 from '../assests/images/cumin1.jpg';
 
 function GetAllMedicines() {
     const [medicines, setMedicines] = useState([]);
-
+    
     useEffect(() => {
         axios
             .get("http://localhost:8080/medicine/getallmedicines")
@@ -17,12 +18,13 @@ function GetAllMedicines() {
                 <table className="table">
                     <thead className="thead-dark">
                         <tr>
+                            <th>medicine Image</th>
                             <th>MedicineId</th>
                             <th>Name</th>
-                            <th>Price</th>
+                            <th>cost</th>
                             <th>Mfd</th>
-                            <th>ExpairyDate</th>
-                            <th>CompanyName</th>
+                            <th>expiryDate</th>
+                            <th>companyName</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -30,23 +32,29 @@ function GetAllMedicines() {
                     <tbody>
                         {medicines.map((p) => (
                             <tr key={p.medicineId}>
+                                <div>
+                                    <img src={cumin1} width="100" height="100" />
+                                </div>
                                 <td> {p.medicineId}</td>
                                 <td> {p.medicineName}</td>
                                 <td> {p.medicineCost} </td>
                                 <td> {p.mfd}</td>
                                 <td> {p.expiryDate}</td>
                                 <td> {p.companyName}</td>
-                                <td><Link to = {`/medicine/details/${p.medicineId}`} className="btn btn-info">View</Link></td>
-                                <td><Link to={`/medicine/update/${p.medicineId}`} className="btn btn-secondary">Update</Link></td>
-                                <td><Link to={`/medicine/delete/${p.medicineId}`} className="btn btn-danger">Delete</Link></td>
-                                
-                               
+                                <td><Link to={`/medicine/details/${p.medicineId}`} className="btn btn-info">View</Link></td>
                             </tr>
+
                         ))}
                     </tbody>
                 </table>
             )}
+
+            <button className="btn btn-primary">Place order</button>
+
         </div>
+
+
+
     );
 }
 

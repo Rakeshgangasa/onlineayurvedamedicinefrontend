@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import {useParams} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 
 function GetAMedicine() {
@@ -14,6 +15,7 @@ function GetAMedicine() {
 
     return(
         <div>
+           
             <h2>Medicine Details</h2>
             {
                 medicine !== null &&
@@ -25,8 +27,17 @@ function GetAMedicine() {
                     <p>expiryDate: {medicine.expiryDate}</p>
                     <p>CompanyName: {medicine.companyName}</p>
                     </div>
+                 
                     
             }
+            <div>
+
+<br></br>
+
+<Link to="/" className="btn btn-danger">Back to Home</Link>
+
+</div>
+            
             
         </div>
     )
