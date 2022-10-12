@@ -1,51 +1,88 @@
-import React from "react";
+import "./Home.css";
 import { Link } from 'react-router-dom';
+import logo from '../assests/images/logo.jpg';
 
 
-function Home() {
 
+const Home = () => {
+  const fontStyles = ["normal", "italic"];
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="">OnlineAyurvedaMedicine</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/AboutUs">AboutUs</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                SignIn/SignUp
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="signin">SignIn</a>
-                <a class="dropdown-item" href="signup">SignUp</a>
+      <div>
 
-              </div>
-            </li>
+        <nav class="navbar bg-secondary">
 
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
-          </form>
+          <div class="container-fluid">
+
+            <img src={logo} alt="Avatar Logo" width="30" height="30" class="rounded-pill" />
+
+            {/* <Link to="/medicine/all" class="btn btn-success btn-rounded">view All Medicine</Link> */}
+            {/* <button type="button" class="btn btn-dark">Home</button>
+            <button type="button" class="btn btn-dark">AboutUs</button>
+            <button type="button" class="btn btn-dark">SignUp</button>
+            <button type="button" class="btn btn-success btn-rounded">Login</button> */}
+            <button type="button" class="btn btn-dark">AboutUs</button>
+            <Link to="/customer/login" class="btn btn-warning btn-rounded"> Login</Link>
+            <Link  to="/customer/add"  class="btn btn-light btn-rounded" >SignIn</Link>
+
+            {/* <Link to="/customer/all"class="btn btn-success btn-rounded" >All Customers</Link> */}
+
+
+
+
+          </div>
+
+        </nav>
+
+      </div>
+
+      <div
+
+        style={{
+          backgroundImage: `url("https://wallpaperaccess.com/full/3030632.jpg")`,
+          backgroundPosition: `cover`
+
+
+        }}
+      >
+        <div style={{ minHeight: "100vh", textShadow: '2px 2px #f2f2f2' }} className="container">
+          <p class="appname"><b />Ayurveda Store</p>
+
+          <p class="typewriter"><h4>Bringing Ayurveda at your doorsteps</h4></p>
+
         </div>
-      </nav>
 
-      <p><Link to="/medicine/all">All Medicines</Link></p>
-      <p><Link to="/medicine/add">Add medicine</Link></p>
-      <p><Link to="/customer/add">Add Customer</Link></p>
-      <p><Link to="/customer/all">All Customers</Link></p>
 
+
+        {/* <div className="Banner2">
+        <div class="card1" >
+          <img src="https://www.pratilipi.com/images/feature-read.webp" class="card-img-top1" alt="..." />
+          <div class="card-body1">
+            <h4 class="card-title1">Read</h4>
+            <p class="card-text1">Discover thousands of stories, poems, articles, magazines, novels, essays, etc for free. Read popular genres... filled with endless emotions, thoughts, verses, and possibilities.</p>
+          </div>
+        </div>
+
+        <div class="card1" >
+          <img src="https://www.pratilipi.com/images/feature-write.webp" class="card-img-top1" alt="..." />
+          <div class="card-body1">
+            <h5 class="card-title1">Explore</h5>
+            <p class="card-text1">Explore your book or books and swim into the ocean of books..
+            </p>
+          </div>
+        </div>
+
+        <div class="card1" >
+          <img src="https://www.pratilipi.com/images/feature-involve.webp" class="card-img-top1" alt="..." />
+          <div class="card-body1">
+            <h5 class="card-title1">Get Involed</h5>
+            <p class="card-text1">At Your Service brings writers and readers on a single platform..</p>
+          </div>
+        </div>
+      </div >*/}
+      </div>
     </div>
-  )
+  );
 }
-
 export default Home;
