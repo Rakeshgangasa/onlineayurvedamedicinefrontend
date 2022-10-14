@@ -2,18 +2,20 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import logo from '../assests/images/logo.jpg';
 import medicine1 from '../assests/images/medicine1.jpeg';
+import medicine2 from '../assests/images/medicine2.jpg';
+import './Home.css';
 function MedicineDashbord() {
 
   return (
     <div>
       <div>
-        <nav class="navbar bg-secondary">
+        <nav class="navbar bg-secondary">Vajraayu
           <div class="container-fluid">
             <img src={logo} alt="Avatar Logo" width="30" height="30" class="rounded-pill" />
             <Link to="/medicine/all" class="btn btn-success btn-rounded">view All Medicine</Link>
-            <Link to="/customer/details" class="btn btn-dark">MyDetails</Link>
-            <button type="button" class="btn btn-success btn-rounded">MyOrder</button>
-            <Link to="/ " class="btn btn-warning">Logout</Link>
+            <Link to="/customer/order" class="btn btn-dark btn-rounded">MyOrder</Link>
+            <Link to="/customer/details" class="btn btn-success">MyDetails</Link>
+            {/* <Link to="/ " class="fa fa-fw fa-user">Logout</Link> */}
             
           </div>
         </nav>
@@ -52,13 +54,14 @@ function MedicineDashbord() {
       </nav> */}
 
       {/* <p><Link to="/medicine/all">All Medicines</Link></p> */}
-       <p><Link to="/medicine/add">Add medicine</Link></p>
+       {/* <p><Link to="/medicine/add">Add medicine</Link></p> */}
       {/* <p><Link to="/customer/add">Add Customer</Link></p>
       <p><Link to="/customer/all">All Customers</Link></p> */}
      <div> 
-        <img  src={medicine1} width='1280px' height='555px' 
+        <img  src={medicine2} width='1280px' height='555px' 
          />
       </div> 
+      
 
     </div>
   )

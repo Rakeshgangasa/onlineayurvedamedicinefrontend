@@ -1,36 +1,38 @@
 import axios from "axios";
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import logo from '../assests/images/logo.jpg';
 
+
 function FetchCustomer() {
 
     const [customer, setCustomers] = useState(null);
+    
+    const user = JSON.parse(localStorage.getItem("loginuser"));
+    console.log(user);
 
-     const user = JSON.parse(localStorage.getItem("loginuser"));
-     console.log(user);
-
-    useEffect(() => { 
-        axios.get("http://localhost:8080/customer/" +user.id).then(resp => setCustomers(resp.data));
+    useEffect(() => {
+        axios.get("http://localhost:8080/customer/" + user.id).then(resp => setCustomers(resp.data));
     }, [user.id]);
 
     return (
-        <div className="container">
-
-<nav class="navbar bg-secondary">
+        <div className="container" style={{
+            backgroundColor: "lightblue", alignItems: 'center',
+            justifyContent: 'center'
+        }}>
+            <nav class="navbar bg-secondary ">
                 <div class="container-fluid">
                     <img src={logo} alt="Avatar Logo" width="30" height="30" class="rounded-pill" />
-                    
-                    <button type="button" class="btn btn-dark">MyOrders</button>
-                    <Link to="/"class="btn btn-warning btn-rounded" >Logout</Link>
+                    <button type="button" class="fa fa-fw fa-user">MyOrders</button>
+                    <Link to="/" class="fa fa-fw fa-user" >Logout</Link>
                 </div>
-
             </nav>
-            <h2>Customer Details</h2>
+            <h2 style={{color: 'midnightblue',textAlign: "center"}}
+            >Customer Details</h2>
             {
-             customer != null &&  
-                <div>
+                customer != null &&
+                <div style={{color: 'black',alignItems: 'center',justifyContent: 'center',textAlign: "center"}}>
                     <p> id : {customer.id} </p>
                     <p> username : {customer.username} </p>
                     <p> password : {customer.password} </p>
@@ -44,11 +46,12 @@ function FetchCustomer() {
                     <p> pincode : {customer.address.pincode}</p>
                 </div>
             }
-
-            <div>
-            <Link to="/customer/update"  className="btn btn-danger">update</Link>
+            <div style={{color: 'red',alignItems: 'center',justifyContent: 'center',textAlign: "center"}}>
+                <Link to="/customer/update" className="btn btn-success">update</Link>
             </div>
         </div>
+
+
     )
 
 }

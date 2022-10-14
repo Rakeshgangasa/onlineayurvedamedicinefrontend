@@ -1,22 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-
 function MyOrder() {
-
     const [orderList, setOrders] = useState(null);
-
     const user = JSON.parse(localStorage.getItem("loginuser"));
     console.log(user);
-
     useEffect(() => {
         axios.get("http://localhost:8080/customer/" + user.id).then(resp => setOrders(resp.data));
 
     }, [user.id]);
     useEffect(() => {
-        axios.get("http://localhost:8080/order/getallorderById/"+ user.id).then(resp => setOrders(resp.data));
+        axios.get("http://localhost:8080/order/getallorderById/" + user.id).then(resp => setOrders(resp.data));
     },[user.id]);
-
     return (
         <div>
             {orderList.map((p) => {

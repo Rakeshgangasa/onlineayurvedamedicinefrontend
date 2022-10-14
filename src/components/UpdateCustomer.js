@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import logo from '../assests/images/logo.jpg';
 
+
 function UpdateCustomer() {
 
     const [cid, setCId] = useState('');
@@ -70,7 +71,7 @@ function UpdateCustomer() {
     }
 
     return (
-        <div className="container">
+        <div className="container" style={{backgroundColor: "lightblue"}}>
             <nav class="navbar bg-secondary">
                 <div class="container-fluid">
                     <img src={logo} alt="Avatar Logo" width="30" height="30" class="rounded-pill" />
@@ -80,8 +81,6 @@ function UpdateCustomer() {
                 </div>
 
             </nav>
-
-
             <div className="form-group">
                 <label htmlFor="cid">Customer Id : </label>
                 <input type="text" className="form-control" name="cid" id="cid" value={cid}
@@ -89,57 +88,42 @@ function UpdateCustomer() {
 
             </div>
 
-
-
-
             <div className="form-group">
                 <label htmlFor="username">Username : </label>
                 <input type="text" className="form-control" name="cusername" id="cusername" value={cusername}
                     onChange={(event) => setCUsername(event.target.value)} placeholder="Enter Username" />
 
             </div>
-
-
-
             <div className="form-group">
                 <label htmlFor="password">Password : </label>
                 <input type="password" className="form-control" name="cpassword" id="cpassword" value={cpassword}
                     onChange={(event) => setCPassword(event.target.value)} placeholder="Enter Password" />
 
             </div>
-
-
-
             <div className="form-group">
                 <label htmlFor="firstName">First Name : </label>
                 <input type="text" className="form-control" name="cfirstName" id="cfirstName" value={cfirstName}
                     onChange={(event) => setCFirstName(event.target.value)} placeholder="Enter Firstname" />
 
             </div>
-
-
             <div className="form-group">
                 <label htmlFor="lastName">Last Name: </label>
                 <input type="text" className="form-control" name="clastName" id="clastName" value={clastName}
                     onChange={(event) => setCLastName(event.target.value)} placeholder="Enter Lastname" />
 
             </div>
-
             <div className="form-group">
                 <label htmlfor="email"> Email : </label>
                 <input type="email" className="form-control" name="cemail" id="cemail" value={cemail}
                     onChange={(event) => setCEmail(event.target.value)} placeholder="Enter email" />
 
             </div>
-
             <div className="form-group">
                 <label htmlFor="mobile">Mobile No : </label>
                 <input type="number" className="form-control" name="cmobile" id="cmobile" value={cmobile}
                     onChange={(event) => setCMobile(event.target.value)} placeholder="Enter Mobile Number" />
 
             </div>
-
-
             <div className="container">
                 <div className="form-group">
                     <label htmlFor="chouseNo">House No : </label>
@@ -148,7 +132,6 @@ function UpdateCustomer() {
 
                 </div>
             </div>
-
             <div className="container">
                 <div className="form-group">
                     <label htmlFor="city">city : </label>
@@ -156,7 +139,6 @@ function UpdateCustomer() {
                         onChange={(event) => setCCity(event.target.value)} placeholder="Enter City" />
 
                 </div> </div>
-
             <div className="container">
                 <div className="form-group">
                     <label htmlFor="state">State : </label>
@@ -177,7 +159,7 @@ function UpdateCustomer() {
 
             <div>
                 <br></br>
-                <Link to="/customer/details" className="btn btn-danger">Back to MyDetails</Link>
+                <Link to="/customer/details" className="btn btn-secondary">Back to MyDetails</Link>
             </div>
         </div>
 

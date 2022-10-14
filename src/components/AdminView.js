@@ -4,25 +4,20 @@ import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import logo from '../assests/images/logo.jpg';
 
-function GetAMedicine() {
+function AdminView() {
 
     const [medicine, setMedicines] = useState(null);
     const { id } = useParams();
-
     useEffect(() => {
         axios.get("http://localhost:8080/medicine/getmedicinebyid/" + id).then(resp => setMedicines(resp.data));
     }, []);
-
-
     return (
         <div>
             <nav class="navbar bg-secondary">
                 <div class="container-fluid">
                     <img src={logo} alt="Avatar Logo" width="30" height="30" class="rounded-pill" />
-
                     <Link to="/customer/details" class="btn btn-primary">MyDetails</Link>
-                    <button type="button" class="btn btn-success btn-rounded">MyOrder</button>
-                    <Link to="/ " class="fa fa-fw fa-user">Logout</Link>
+                    <Link to="/ " class="btn btn-warning">Logout</Link>
 
                 </div>
             </nav>
@@ -46,10 +41,10 @@ function GetAMedicine() {
                 }
                 <div style={{ color: 'red', textAlign: "center" }} >
                     <br></br>
-                    <Link to="/medicine/all" className="btn btn-secondary">Back to All Medicines</Link>
+                    <Link to="/admin/dashboard" className="btn btn-secondary">Back to All Medicines</Link>
                 </div>
             </div>
         </div>
     )
 }
-export default GetAMedicine;
+export default AdminView

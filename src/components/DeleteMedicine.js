@@ -11,13 +11,10 @@ function DeleteMedicine() {
     useEffect(() => {
         axios.get("http://localhost:8080/medicine/getmedicinebyid/" + id).then(resp => setMedicine(resp.data));
     }, [id]);
-
-
-
     const handleDelete = () => {
         axios.delete("http://localhost:8080/medicine/delete/" + id).then(resp => {
             alert("Medicine deleted");
-            navigate("/medicine/all");
+            navigate("/admin/dashboard");
         });
     }
     return (
@@ -38,7 +35,7 @@ function DeleteMedicine() {
                         <button onClick={handleDelete} className="btn btn-danger">Delete</button>
                     </p>
                     <p>
-                        <Link to={"/medicine/all"} className="btn btn-secondary">Back</Link>
+                        <Link to={"/admin/dashboard"} className="btn btn-secondary">Back</Link>
                     </p>
                 </div>
 
