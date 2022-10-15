@@ -43,11 +43,6 @@ function App() {
         <Route path="/admin/dashboard" element={<AdminDashbord />} />
         <Route path="/admin/view/:id" element={<AdminView />}></Route>
         <Route path="/customer/all" element={<FetchAllCustomers/>} />
-
-
-        
-
-
       </Routes>
     </BrowserRouter>
   );

@@ -6,30 +6,37 @@ import logo from '../assests/images/logo.jpg';
 
 function GetAllMedicines() {
     const [medicines, setMedicines] = useState([]);
-    const checkList = [
-        {
-            id: medicines.medicineId,
-            name: medicines.medicineName
-        },
 
-    ]
+
+
     const [checked, setChecked] = useState([]);
     const handleCheck = (event) => {
         var updatedList = [...checked];
         if (event.target.checked) {
             updatedList = [...checked, event.target.value];
         } else {
-            updatedList.splice(checked.indexOf(event.target.value), 1);
+            updatedList.slice(checked.indexOf(event.target.value), 1);
         }
         setChecked(updatedList);
     };
     const placeOrder = () => {
         console.log("total:" + checked.length);
-        for (let c of checked) {
-            console.log(c);
+        console.log(checked);
+        const user = JSON.parse(localStorage.getItem("loginuser"));
+        console.log(user);
+
+        const payload = {
+            customerId: user.id,
+            medicines: [...checked]
+
         }
+
+
+        axios.post("http://localhost:8080/order/addorder", payload)
+            .then((resp) => alert("order added successfully"));
         setChecked([]);
     }
+
 
     useEffect(() => {
         axios
@@ -42,9 +49,10 @@ function GetAllMedicines() {
             <nav class="navbar bg-secondary">
                 <div class="container-fluid">
                     <img src={logo} alt="Avatar Logo" width="30" height="30" class="rounded-pill" />
-                    <button type="button" class="fa fa-fw fa-user">MyOrders</button>
-                    <Link to="/customer/details" class="fa fa-fw fa-user">MyDetails</Link>
-                    <Link to="/" class="fa fa-fw fa-user" >Logout</Link>
+                    <Link to="/customer/details" class="btn btn-primary">MyDetails</Link>
+
+                    <Link to="/customer/order" class="btn btn-success btn-rounded">MyOrder</Link>
+                    <Link to="/" class="btn btn-warning btn-rounded" >Logout</Link>
                 </div>
             </nav>
             <div className="container" style={{
@@ -67,28 +75,26 @@ function GetAllMedicines() {
                                     <div>
                                         <img src={cumin1} width="100" height="100" />
                                     </div>
-                                    {/* <td> {p.medicineId}</td> */}
+
                                     <td> {p.medicineName}</td>
 
                                     <td><Link to={`/medicine/details/${p.medicineId}`} className="btn btn-dark">View</Link></td>
-                                    
-                                    {checkList.map((item, index) => (
 
-                                        <div key={index}>
 
-                                            <input value={item.medicineId} type="checkbox" onChange={handleCheck} />
+                                    <td>
+                                        <input value={p.medicineId} type="checkbox" onChange={handleCheck} />
 
-                                            <span>{item.medicineName}</span>
 
-                                        </div>
-                                    )
-                                    )}
+                                    </td>
+
+
+
                                 </tr>
                             ))}
                         </tbody>
                     </table>
                 )}
-                <Link to="/customer/order/" onClick={placeOrder} class="btn btn-success">Place order</Link>
+                <button onClick={placeOrder} class="btn btn-success">Place order</button>
                 {
                     checked.length > 0 &&
                     checked.map(i => <div>
