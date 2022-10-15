@@ -55,6 +55,15 @@ function AddCustomer() {
 
             errors['cPincodeError'] = "Pincode is required."
         }
+        const mobileregx = /^\d{10}$/;
+        if (!cmobile.match(mobileregx)) {
+            errors['cMobileError'] = "Enter a valid mobile number"
+        }
+        const emailregex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (!cemail.match(emailregex)) {
+            errors['cemailError'] = "Email is invalid."
+        }
+
         setFormErrors(errors);
         const noErrors = Object.keys(errors).length === 0;
         if (noErrors) {

@@ -10,7 +10,7 @@ function AdminView() {
     const { id } = useParams();
     useEffect(() => {
         axios.get("http://localhost:8080/medicine/getmedicinebyid/" + id).then(resp => setMedicines(resp.data));
-    }, []);
+    }, [id]);
     return (
         <div>
             <nav class="navbar bg-secondary">

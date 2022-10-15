@@ -53,7 +53,7 @@ function AdminDashbord() {
                                         <td> {p.medicineId}</td>
                                         <td> {p.medicineName}</td>
                                         <td>{p.mfd}</td>
-                                        <td><Link to="/admin/view" className="btn btn-dark">View</Link></td>
+                                        <td><Link to={`/admin/view/${p.medicineId}`} className="btn btn-dark">View</Link></td>
                                         <td><Link to={`/medicine/update/${p.medicineId}`} className="btn btn-secondary">Update</Link></td>
                                         <td><Link to={`/medicine/delete/${p.medicineId}`}  className="btn btn-danger">Delete</Link></td>
                                     </tr>

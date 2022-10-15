@@ -41,7 +41,7 @@ function App() {
         <Route path="/customer/update" element={<UpdateCustomer />} />
         <Route path="/customer/order" element={<MyOrder />} />
         <Route path="/admin/dashboard" element={<AdminDashbord />} />
-        <Route path="/admin/view" element={<AdminView />}></Route>
+        <Route path="/admin/view/:id" element={<AdminView />}></Route>
         <Route path="/customer/all" element={<FetchAllCustomers/>} />
 
 
