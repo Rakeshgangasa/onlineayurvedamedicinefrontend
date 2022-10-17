@@ -15,10 +15,12 @@ function MedicineDashbord() {
             <Link to="/medicine/all" class="btn btn-success btn-rounded">view All Medicine</Link>
             <Link to="/customer/order" class="btn btn-dark btn-rounded">MyOrder</Link>
             <Link to="/customer/details" class="btn btn-success">MyDetails</Link>
+            <Link to="/" class="btn btn-warning btn-rounded" >Logout</Link>
             {/* <Link to="/ " class="fa fa-fw fa-user">Logout</Link> */}
             
           </div>
         </nav>
+        <p class="typewriter"><h3>Time To Balance Your Life</h3></p>
       </div>
       {/* <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="">OnlineAyurvedaMedicine</a>

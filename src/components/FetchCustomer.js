@@ -24,7 +24,7 @@ function FetchCustomer() {
             <nav class="navbar bg-secondary ">
                 <div class="container-fluid">
                     <img src={logo} alt="Avatar Logo" width="30" height="30" class="rounded-pill" />
-                    <button type="button" class="fa fa-fw fa-user">MyOrders</button>
+                    {/* <Link to="/customer/order" class="btn btn-success btn-rounded">MyOrder</Link> */}
                     <Link to="/" class="fa fa-fw fa-user" >Logout</Link>
                 </div>
             </nav>

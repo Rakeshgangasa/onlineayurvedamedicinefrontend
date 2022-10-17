@@ -30,10 +30,10 @@ const Home = () => {
       >
         <div style={{ minHeight: "100vh", textShadow: '2px 2px #f2f2f2' }} className="container">
           <img src={logo} alt="Avatar Logo" width="100" height="100" class="rounded-pill" />
-          <p class="appname"><b />Ayurveda Store</p>
-          <p class="typewriter"><h4>Time To Balance Your Life</h4></p>
-          <p class="typewriter"><h5>Nature Nurture's you</h5></p>
-          <p class="typewriter"><h6>Nature can do more than physicians</h6></p>
+          <p class="appname"><b />Vajraayu</p>
+          
+          <p class="typewriter"><h5>Nature  That Nurture's You</h5></p>
+          {/* <p class="typewriter"><h6>Nature can do more than physicians</h6></p> */}
 
 
         </div>
