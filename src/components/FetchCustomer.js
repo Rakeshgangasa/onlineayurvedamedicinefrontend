@@ -21,9 +21,10 @@ function FetchCustomer() {
             backgroundColor: "lightblue", alignItems: 'center',
             justifyContent: 'center'
         }}>
-            <nav class="navbar bg-secondary ">
+            <nav class="navbar bg-secondary "> Vajraayu
                 <div class="container-fluid">
                     <img src={logo} alt="Avatar Logo" width="30" height="30" class="rounded-pill" />
+                    <Link to="/medicine/all" class="fa fa-fw fa-user">Back</Link>
                     {/* <Link to="/customer/order" class="btn btn-success btn-rounded">MyOrder</Link> */}
                     <Link to="/" class="fa fa-fw fa-user" >Logout</Link>
                 </div>

@@ -71,7 +71,7 @@ function UpdateCustomer() {
     }
 
     return (
-        <div className="container" style={{backgroundColor: "lightblue"}}>
+        <div className="container" > Vajraayu
             <nav class="navbar bg-secondary">
                 <div class="container-fluid">
                     <img src={logo} alt="Avatar Logo" width="30" height="30" class="rounded-pill" />
@@ -91,44 +91,58 @@ function UpdateCustomer() {
             <div className="form-group">
                 <label htmlFor="username">Username : </label>
                 <input type="text" className="form-control" name="cusername" id="cusername" value={cusername}
-                    onChange={(event) => setCUsername(event.target.value)} placeholder="Enter Username" />
+                    onChange={(event) => setCUsername(event.target.value)} placeholder="Enter Username" style={{
+                        backgroundColor: "wheat",
+                    }}/>
 
             </div>
             <div className="form-group">
                 <label htmlFor="password">Password : </label>
                 <input type="password" className="form-control" name="cpassword" id="cpassword" value={cpassword}
-                    onChange={(event) => setCPassword(event.target.value)} placeholder="Enter Password" />
+                    onChange={(event) => setCPassword(event.target.value)} placeholder="Enter Password" style={{
+                        backgroundColor: "wheat",
+                    }}/>
 
             </div>
             <div className="form-group">
                 <label htmlFor="firstName">First Name : </label>
                 <input type="text" className="form-control" name="cfirstName" id="cfirstName" value={cfirstName}
-                    onChange={(event) => setCFirstName(event.target.value)} placeholder="Enter Firstname" />
+                    onChange={(event) => setCFirstName(event.target.value)} placeholder="Enter Firstname" style={{
+                        backgroundColor: "wheat",
+                    }}/>
 
             </div>
             <div className="form-group">
                 <label htmlFor="lastName">Last Name: </label>
                 <input type="text" className="form-control" name="clastName" id="clastName" value={clastName}
-                    onChange={(event) => setCLastName(event.target.value)} placeholder="Enter Lastname" />
+                    onChange={(event) => setCLastName(event.target.value)} placeholder="Enter Lastname" style={{
+                        backgroundColor: "wheat",
+                    }}/>
 
             </div>
             <div className="form-group">
                 <label htmlfor="email"> Email : </label>
                 <input type="email" className="form-control" name="cemail" id="cemail" value={cemail}
-                    onChange={(event) => setCEmail(event.target.value)} placeholder="Enter email" />
+                    onChange={(event) => setCEmail(event.target.value)} placeholder="Enter email" style={{
+                        backgroundColor: "wheat",
+                    }}/>
 
             </div>
             <div className="form-group">
                 <label htmlFor="mobile">Mobile No : </label>
                 <input type="number" className="form-control" name="cmobile" id="cmobile" value={cmobile}
-                    onChange={(event) => setCMobile(event.target.value)} placeholder="Enter Mobile Number" />
+                    onChange={(event) => setCMobile(event.target.value)} placeholder="Enter Mobile Number" style={{
+                        backgroundColor: "wheat",
+                    }}/>
 
             </div>
             <div className="container">
                 <div className="form-group">
                     <label htmlFor="chouseNo">House No : </label>
                     <input type="number" className="form-control" name="chouseNo" id="chouseNo" value={chouseNo}
-                        onChange={(event) => setCHouseNo(event.target.value)} placeholder="Enter House No" />
+                        onChange={(event) => setCHouseNo(event.target.value)} placeholder="Enter House No" style={{
+                            backgroundColor: "wheat",
+                        }}/>
 
                 </div>
             </div>
@@ -136,14 +150,18 @@ function UpdateCustomer() {
                 <div className="form-group">
                     <label htmlFor="city">city : </label>
                     <input type="text" className="form-control" name="ccity" id="ccity" value={ccity}
-                        onChange={(event) => setCCity(event.target.value)} placeholder="Enter City" />
+                        onChange={(event) => setCCity(event.target.value)} placeholder="Enter City" style={{
+                            backgroundColor: "wheat",
+                        }}/>
 
                 </div> </div>
             <div className="container">
                 <div className="form-group">
                     <label htmlFor="state">State : </label>
                     <input type="text" className="form-control" name="cstate" id="cstate" value={cstate}
-                        onChange={(event) => setCState(event.target.value)} placeholder="Enter State" />
+                        onChange={(event) => setCState(event.target.value)} placeholder="Enter State" style={{
+                            backgroundColor: "wheat",
+                        }}/>
 
                 </div> </div>
 
@@ -151,7 +169,9 @@ function UpdateCustomer() {
                 <div className="form-group">
                     <label htmlFor="pincode">Pincode : </label>
                     <input type="number" className="form-control" name="cpincode" id="cpincode" value={cpincode}
-                        onChange={(event) => setCPincode(event.target.value)} placeholder="Enter Username" />
+                        onChange={(event) => setCPincode(event.target.value)} placeholder="Enter pincode" style={{
+                            backgroundColor: "wheat",
+                        }}/>
 
                 </div> </div>
 

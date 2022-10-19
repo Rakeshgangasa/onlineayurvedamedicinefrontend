@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import logo from '../assests/images/logo.jpg';
+import dash from '../assests/images/dash.jpg';
 
 function AdminView() {
 
@@ -41,6 +42,7 @@ function AdminView() {
                 }
                 <div style={{ color: 'red', textAlign: "center" }} >
                     <br></br>
+
                     <Link to="/admin/dashboard" className="btn btn-secondary">Back to All Medicines</Link>
                 </div>
             </div>

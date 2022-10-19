@@ -36,8 +36,8 @@ return (
                 </div>
 
                 <div class="container">
-                    <p>Tales have stood the test of time; the art of story-telling is present in every language.<br></br> In English it comes in many names such as tale, narrative, anecdote, legend, fable, saga; <br></br>in Hindi, it would be called katha, kahani, dastan;<br></br> in Tamil it would be called Kadhai and so on,<br></br> but the fundamental concept being that no matter the language<br></br> the art of storytelling is eternal.<br></br>
-                        Centuries ago people would often huddle up around the fire and exchange stories, sing songs, narrate epics.<br></br> In the 20th Century, in the birthplace of sagas such as Mahabharat, Shakuntala, Panchatantra <br></br>and many; storytelling was dying, and it was a slow and painful death.</p>
+                    {/* <p>Tales have stood the test of time; the art of story-telling is present in every language.<br></br> In English it comes in many names such as tale, narrative, anecdote, legend, fable, saga; <br></br>in Hindi, it would be called katha, kahani, dastan;<br></br> in Tamil it would be called Kadhai and so on,<br></br> but the fundamental concept being that no matter the language<br></br> the art of storytelling is eternal.<br></br>
+                        Centuries ago people would often huddle up around the fire and exchange stories, sing songs, narrate epics.<br></br> In the 20th Century, in the birthplace of sagas such as Mahabharat, Shakuntala, Panchatantra <br></br>and many; storytelling was dying, and it was a slow and painful death.</p> */}
                 </div>
 
             </div>

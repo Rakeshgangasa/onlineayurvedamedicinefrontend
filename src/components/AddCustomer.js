@@ -107,7 +107,9 @@ function AddCustomer() {
             <div className="form-group" class="font-weight-bold"  >
                 <label htmlFor="password">Password : </label>
                 <input type="password" className="form-control" name="cpassword" id="cpassword" value={cpassword}
-                    onChange={(event) => setCPassword(event.target.value)} placeholder="Enter Password" />
+                    onChange={(event) => setCPassword(event.target.value)} placeholder="Enter Password"  style={{
+                        backgroundColor: "wheat",
+                    }}/>
                 {
                     formErrors.cpasswordError && <div style={{ color: "red" }}> {formErrors.cpasswordError}</div>
                 }
@@ -115,7 +117,9 @@ function AddCustomer() {
             <div className="form-group" class="font-weight-bold" >
                 <label htmlFor="firstName">First Name : </label>
                 <input type="text" className="form-control" name="cfirstName" id="cfirstName" value={cfirstName}
-                    onChange={(event) => setCFirstName(event.target.value)} placeholder="Enter Firstname" />
+                    onChange={(event) => setCFirstName(event.target.value)} placeholder="Enter Firstname" style={{
+                        backgroundColor: "wheat",
+                    }}/>
                 {
                     formErrors.cFirstNameError && <div style={{ color: "red" }}> {formErrors.cFirstNameError}</div>
                 }
@@ -123,7 +127,9 @@ function AddCustomer() {
             <div className="form-group" class="font-weight-bold" >
                 <label htmlFor="lastName">Last Name: </label>
                 <input type="text" className="form-control" name="clastName" id="clastName" value={clastName}
-                    onChange={(event) => setCLastName(event.target.value)} placeholder="Enter Lastname" />
+                    onChange={(event) => setCLastName(event.target.value)} placeholder="Enter Lastname" style={{
+                        backgroundColor: "wheat",
+                    }}/>
                 {
                     formErrors.cLastNameError && <div style={{ color: "red" }}> {formErrors.cLastNameError}</div>
                 }
@@ -131,7 +137,9 @@ function AddCustomer() {
             <div className="form-group" class="font-weight-bold" >
                 <label htmlfor="email"> Email : </label>
                 <input type="email" className="form-control" name="cemail" id="cemail" value={cemail}
-                    onChange={(event) => setCEmail(event.target.value)} placeholder="Enter email" />
+                    onChange={(event) => setCEmail(event.target.value)} placeholder="Enter email" style={{
+                        backgroundColor: "wheat",
+                    }}/>
                 {
                     formErrors.cemailError && <div style={{ color: "red" }}> {formErrors.cemailError}</div>
                 }
@@ -141,7 +149,9 @@ function AddCustomer() {
                 <input type="text"  className="form-control" name="cmobile" id="cmobile" value={cmobile}
                 onChange={(event) => setCMobile(event.target.value)
                 } 
-                placeholder="Enter MobileNo"/>
+                placeholder="Enter MobileNo" style={{
+                    backgroundColor: "wheat",
+                }}/>
                 {
                     formErrors.cMobileError && <div style={{ color: "red" }}> {formErrors.cMobileError}</div>
                 }
@@ -150,7 +160,9 @@ function AddCustomer() {
             <div className="form-group" class="font-weight-bold" >
                 <label htmlFor="houseNo">House No : </label>
                 <input type="houseNo" className="form-control" name="chouseNo" id="chouseNo" value={chouseNo}
-                    onChange={(event) => setCHouseNo(event.target.value)} placeholder="Enter House No" />
+                    onChange={(event) => setCHouseNo(event.target.value)} placeholder="Enter House No" style={{
+                        backgroundColor: "wheat",
+                    }}/>
                 {
                     formErrors.chouseNoError && <div style={{ color: "red" }}> {formErrors.chouseNoError}</div>
                 }
@@ -158,7 +170,9 @@ function AddCustomer() {
             <div className="form-group" class="font-weight-bold" >
                 <label htmlFor="city">city : </label>
                 <input type="text" className="form-control" name="ccity" id="ccity" value={ccity}
-                    onChange={(event) => setCCity(event.target.value)} placeholder="Enter City" />
+                    onChange={(event) => setCCity(event.target.value)} placeholder="Enter City" style={{
+                        backgroundColor: "wheat",
+                    }}/>
                 {
                     formErrors.cCityError && <div style={{ color: "red" }}> {formErrors.cCityError}</div>
                 }
@@ -167,7 +181,9 @@ function AddCustomer() {
             <div className="form-group" class="font-weight-bold" >
                 <label htmlFor="state">State : </label>
                 <input type="text" className="form-control" name="cstate" id="cstate" value={cstate}
-                    onChange={(event) => setCState(event.target.value)} placeholder="Enter State" />
+                    onChange={(event) => setCState(event.target.value)} placeholder="Enter State" style={{
+                        backgroundColor: "wheat",
+                    }}/>
                 {
                     formErrors.cStateError && <div style={{ color: "red" }}> {formErrors.cStateError}</div>
                 }
@@ -175,7 +191,9 @@ function AddCustomer() {
             <div className="form-group" class="font-weight-bold" >
                 <label htmlFor="pincode">Pincode : </label>
                 <input type="pincode" className="form-control" name="cpincode" id="cpincode" value={cpincode}
-                    onChange={(event) => setCPincode(event.target.value)} placeholder="Enter pincode" />
+                    onChange={(event) => setCPincode(event.target.value)} placeholder="Enter pincode" style={{
+                        backgroundColor: "wheat",
+                    }}/>
                 {
                     formErrors.cPincodeError && <div style={{ color: "red" }}> {formErrors.cPincodeError}</div>
                 }
@@ -186,7 +204,7 @@ function AddCustomer() {
                 <Link to="/" className="btn btn-danger">Back to Home</Link>
                 <div>
                     <br></br>
-                    < Link to="/customer/login" className="btn btn-warning">Already registered click here </Link>
+                    < Link to="/login" className="btn btn-warning">Already registered click here </Link>
                 </div>
             </div>
         </div>

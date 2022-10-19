@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
@@ -6,11 +5,7 @@ import cumin1 from '../assests/images/cumin1.jpg';
 import logo from '../assests/images/logo.jpg';
 
 function AdminDashbord() {
-
     const [medicines, setMedicines] = useState([]);
-
-
-
     useEffect(() => {
         axios
             .get("http://localhost:8080/medicine/getallmedicines")
@@ -19,12 +14,12 @@ function AdminDashbord() {
     return (
         <div>
             <div>
-                <nav   className="fa fa-cube" class="navbar bg-secondary">OnlineAyurvedaMedicine
+                <nav   className="fa fa-cube" class="navbar bg-secondary">Vajraayu
                     <div class="container-fluid">
                         <img src={logo} alt="Avatar Logo" width="30" height="30" class="rounded-pill" />
                         {/* <Link to="/customer/details" class="btn btn-primary">MyDetails</Link> */}
                         <p><Link to="/medicine/add" class="btn btn-primary">Add medicine</Link></p>
-                        <Link to="/customer/all" class="btn btn-warning btn-rounded" >All Customers</Link>
+                        <Link to="/customer/all" class="btn btn-success btn-rounded" >All Customers</Link>
                         {/* <button type="button" class="btn btn-success">MyOrders</button> */}
                         <Link to="/" class="btn btn-warning btn-rounded" >Logout</Link>
                     </div>
@@ -34,8 +29,9 @@ function AdminDashbord() {
                     justifyContent: 'center'
                 }} >
                     {medicines.length > 0 && (
-                        <table className="table">
-                            <thead className="thead-striped">
+                        
+                   <table className="table">
+                            <thead className="productsContainer">
                                 <tr>
                                     <th>medicine Image</th>
                                     <th>MedicineId</th>

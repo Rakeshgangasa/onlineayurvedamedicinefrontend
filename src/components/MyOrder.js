@@ -16,6 +16,7 @@ function MyOrder() {
 
                 <div>
                     <div>
+                        
                         <p>orderDate : {p.orderDate} </p>
                         <p>dispatchDate : {p.dispatchDate} </p>
                         <p>totalCost : {p.totalCost} </p>
@@ -25,7 +26,7 @@ function MyOrder() {
                             <div>
                                 <p>medicineId: {o.medicine.medicineId}</p>
                                 <p>Name: {o.medicine.medicineName}</p>
-                                <p>medicineCost: {o.medicine.medicineCost}</p>
+                                {/* <p>medicineCost: {o.medicine.medicineCost}</p> */}
                                 <p>Mfd: {o.medicine.mfd}</p>
                                 <p>expiryDate: {o.medicine.expiryDate}</p>
                                 <p>CompanyName: {o.medicine.companyName}</p>

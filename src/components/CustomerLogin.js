@@ -30,6 +30,7 @@ function CustomerLogin() {
         if (!password) {
             errors['passwordError'] = "Password is required."
         }
+        
         setFormErrors(errors);
         const noErrors = Object.keys(errors).length === 0;
 
@@ -92,6 +93,7 @@ function CustomerLogin() {
                             <option value="#">Select a role</option>
                             <option value="admin">ADMIN</option>
                             <option value="customer">USER</option>
+                        
                         </select>
                     </div>
                     <br></br>

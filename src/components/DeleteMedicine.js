@@ -19,9 +19,11 @@ function DeleteMedicine() {
     }
     return (
         <div className="container">
-            <h2> Delete Medicine</h2>
+            <h2 style={{color: 'midnightblue',textAlign: "center"}}
+            >Delete Medicine</h2>
             {
                 medicine !== null &&
+                <div style={{color: 'black',alignItems: 'center',justifyContent: 'center',textAlign: "center"}}>
                 <div>
                     <div>
                         <p>medicineId: {medicine.medicineId}</p>
@@ -37,6 +39,7 @@ function DeleteMedicine() {
                     <p>
                         <Link to={"/admin/dashboard"} className="btn btn-secondary">Back</Link>
                     </p>
+                </div>
                 </div>
 
             }

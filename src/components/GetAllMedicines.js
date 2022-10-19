@@ -6,9 +6,6 @@ import logo from '../assests/images/logo.jpg';
 
 function GetAllMedicines() {
     const [medicines, setMedicines] = useState([]);
-
-
-
     const [checked, setChecked] = useState([]);
     const handleCheck = (event) => {
         var updatedList = [...checked];
@@ -30,27 +27,22 @@ function GetAllMedicines() {
             medicines: [...checked]
 
         }
-
-
         axios.post("http://localhost:8080/order/addorder", payload)
             .then((resp) => alert("order added successfully"));
         setChecked([]);
     }
-
-
     useEffect(() => {
         axios
             .get("http://localhost:8080/medicine/getallmedicines")
             .then((resp) => setMedicines(resp.data));
     }, []);
-
     return (
         <div>
-            <nav class="navbar bg-secondary">
+            <nav class="navbar bg-secondary"> Vajraayu
                 <div class="container-fluid">
                     <img src={logo} alt="Avatar Logo" width="30" height="30" class="rounded-pill" />
+                    <Link to="/customer/dashboard"  class="btn btn-warning">dashboard</Link>
                     <Link to="/customer/details" class="btn btn-primary">MyDetails</Link>
-
                     <Link to="/customer/order" class="btn btn-success btn-rounded">MyOrder</Link>
                     <Link to="/" class="btn btn-warning btn-rounded" >Logout</Link>
                 </div>
@@ -66,7 +58,6 @@ function GetAllMedicines() {
                                 <th>medicine Image</th>
                                 {/* <th>MedicineId</th> */}
                                 <th>Name</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -75,20 +66,11 @@ function GetAllMedicines() {
                                     <div>
                                         <img src={cumin1} width="100" height="100" />
                                     </div>
-
                                     <td> {p.medicineName}</td>
-
                                     <td><Link to={`/medicine/details/${p.medicineId}`} className="btn btn-dark">View</Link></td>
-
-
                                     <td>
                                         <input value={p.medicineId} type="checkbox" onChange={handleCheck} />
-
-
                                     </td>
-
-
-
                                 </tr>
                             ))}
                         </tbody>

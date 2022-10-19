@@ -21,8 +21,9 @@ function GetAMedicine() {
                     <img src={logo} alt="Avatar Logo" width="30" height="30" class="rounded-pill" />
 
                     <Link to="/customer/details" class="btn btn-primary">MyDetails</Link>
-                    <button type="button" class="btn btn-success btn-rounded">MyOrder</button>
+                    <Link to="/customer/order" class="btn btn-success btn-rounded">MyOrder</Link>
                     <Link to="/ " class="fa fa-fw fa-user">Logout</Link>
+                  
 
                 </div>
             </nav>

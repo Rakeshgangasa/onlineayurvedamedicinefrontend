@@ -26,6 +26,9 @@ function AddMedicine() {
         if (!mExpiryDate) {
             errors['mExpiryDateError'] = "medicine ExpiryDate is required."
         }
+        if (!mCompanyName) {
+            errors['mCompanyNameError'] = "medicine CompanyName is required."
+        }
         if (mCost < 0) {
             errors['mPriceError'] = "Please enter positive number."
         }
@@ -97,6 +100,9 @@ function AddMedicine() {
                     backgroundColor: "wheat",
                 }}
                     onChange={(event) => setMCompanyName(event.target.value)} value={mCompanyName} />
+                    {
+                    formErrors.mCompanyNameError && <div style={{ color: "red" }}>{formErrors.mCompanyNameError}</div>
+                }
             </div>
 
             <div>
